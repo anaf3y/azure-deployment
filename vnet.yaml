@@ -37,7 +37,6 @@ parameters:
       description: Location for all resources.
 variables: {}
 resources:
-- apiVersion: '2018-10-01'
   type: Microsoft.Network/virtualNetworks
   name: "[parameters('vnetName')]"
   location: "[parameters('location')]"
@@ -46,7 +45,6 @@ resources:
       addressPrefixes:
       - "[parameters('vnetAddressPrefix')]"
   resources:
-  - apiVersion: '2018-10-01'
     type: subnets
     location: "[parameters('location')]"
     name: "[parameters('subnet1Name')]"
@@ -54,7 +52,6 @@ resources:
     - "[parameters('vnetName')]"
     properties:
       addressPrefix: "[parameters('subnet1Prefix')]"
-  - apiVersion: '2018-10-01'
     type: subnets
     location: "[parameters('location')]"
     name: "[parameters('subnet2Name')]"
