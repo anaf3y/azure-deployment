@@ -1,5 +1,5 @@
 ---
-Parameters:
+parameters:
   vnetName:
     Type: string
     DefaultValue: MyTestVNet1
@@ -35,8 +35,8 @@ Parameters:
     defaultValue: "[resourceGroup().location]"
     metadata:
       description: Location for all resources.
-Variables: {}
-Resources:
+variables: {}
+resources:
   type: Microsoft.Network/virtualNetworks
   name: "[parameters('vnetName')]"
   location: "[parameters('location')]"
@@ -44,7 +44,7 @@ Resources:
     addressSpace:
       addressPrefixes:
       - "[parameters('vnetAddressPrefix')]"
-  Resources:
+  resources:
     type: subnets
     location: "[parameters('location')]"
     name: "[parameters('subnet1Name')]"
